@@ -10,11 +10,14 @@ import SwiftUI
 
 struct UnitDetail: View {
 
+    let detailViewWindow:NSWindow?
+
     @State var unit: Entity? = Entity()
     @State var attackText = "-"
     @State var hpText = "-"
 
     var body: some View {
+
         HStack {
             Image("legend").resizable().frame(width: 64, height: 64)
             HStack {
@@ -87,6 +90,6 @@ struct UnitDetail: View {
 
 struct  UnitDetail_Previews: PreviewProvider {
     static var previews: some View {
-        UnitDetail(unit: Entity())
+        UnitDetail(detailViewWindow: nil, unit: Entity())
     }
 }
