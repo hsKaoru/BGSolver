@@ -23,7 +23,7 @@ class Entity {
     let uid: String = UUID().uuidString
 
     //MARK: - card properties
-    //let name: String = ""
+    var name: String = ""
     //let techLevel: Int = 1
     let race: Race
     var health: Int
