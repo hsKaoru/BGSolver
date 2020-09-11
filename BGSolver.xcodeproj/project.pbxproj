@@ -12,6 +12,18 @@
 		78CBA83F250BFC2700E72811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA83E250BFC2700E72811 /* Assets.xcassets */; };
 		78CBA842250BFC2700E72811 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA841250BFC2700E72811 /* Preview Assets.xcassets */; };
 		78CBA845250BFC2700E72811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA843250BFC2700E72811 /* Main.storyboard */; };
+		78CBA857250BFC3600E72811 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA84E250BFC3600E72811 /* Board.swift */; };
+		78CBA858250BFC3600E72811 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA84F250BFC3600E72811 /* Entity.swift */; };
+		78CBA859250BFC3600E72811 /* RebornMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA851250BFC3600E72811 /* RebornMechanics.swift */; };
+		78CBA85A250BFC3600E72811 /* BuffMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA852250BFC3600E72811 /* BuffMechanics.swift */; };
+		78CBA85B250BFC3600E72811 /* EntityMeachanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA853250BFC3600E72811 /* EntityMeachanics.swift */; };
+		78CBA85C250BFC3600E72811 /* CleaveMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA854250BFC3600E72811 /* CleaveMechanics.swift */; };
+		78CBA85D250BFC3600E72811 /* DeathRattleMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA855250BFC3600E72811 /* DeathRattleMechanics.swift */; };
+		78CBA85E250BFC3600E72811 /* BattleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA856250BFC3600E72811 /* BattleGround.swift */; };
+		78CBA861250BFC3F00E72811 /* BattleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA860250BFC3F00E72811 /* BattleLogger.swift */; };
+		78CBA865250BFC7300E72811 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA864250BFC7300E72811 /* UnitCell.swift */; };
+		78CBA867250BFC7800E72811 /* UnitDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA866250BFC7800E72811 /* UnitDetail.swift */; };
+		78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +35,18 @@
 		78CBA844250BFC2700E72811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78CBA846250BFC2700E72811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78CBA847250BFC2700E72811 /* BGSolver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BGSolver.entitlements; sourceTree = "<group>"; };
+		78CBA84E250BFC3600E72811 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		78CBA84F250BFC3600E72811 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		78CBA851250BFC3600E72811 /* RebornMechanics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RebornMechanics.swift; sourceTree = "<group>"; };
+		78CBA852250BFC3600E72811 /* BuffMechanics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffMechanics.swift; sourceTree = "<group>"; };
+		78CBA853250BFC3600E72811 /* EntityMeachanics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityMeachanics.swift; sourceTree = "<group>"; };
+		78CBA854250BFC3600E72811 /* CleaveMechanics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleaveMechanics.swift; sourceTree = "<group>"; };
+		78CBA855250BFC3600E72811 /* DeathRattleMechanics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRattleMechanics.swift; sourceTree = "<group>"; };
+		78CBA856250BFC3600E72811 /* BattleGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleGround.swift; sourceTree = "<group>"; };
+		78CBA860250BFC3F00E72811 /* BattleLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleLogger.swift; sourceTree = "<group>"; };
+		78CBA864250BFC7300E72811 /* UnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
+		78CBA866250BFC7800E72811 /* UnitDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitDetail.swift; sourceTree = "<group>"; };
+		78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCellStatBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +79,9 @@
 		78CBA839250BFC2600E72811 /* BGSolver */ = {
 			isa = PBXGroup;
 			children = (
+				78CBA862250BFC5C00E72811 /* UI */,
+				78CBA85F250BFC3F00E72811 /* Helpers */,
+				78CBA84D250BFC3600E72811 /* Models */,
 				78CBA83A250BFC2600E72811 /* AppDelegate.swift */,
 				78CBA83C250BFC2600E72811 /* ContentView.swift */,
 				78CBA83E250BFC2700E72811 /* Assets.xcassets */,
@@ -72,6 +99,55 @@
 				78CBA841250BFC2700E72811 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78CBA84D250BFC3600E72811 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA84E250BFC3600E72811 /* Board.swift */,
+				78CBA84F250BFC3600E72811 /* Entity.swift */,
+				78CBA850250BFC3600E72811 /* Mechanics */,
+				78CBA856250BFC3600E72811 /* BattleGround.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78CBA850250BFC3600E72811 /* Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA851250BFC3600E72811 /* RebornMechanics.swift */,
+				78CBA852250BFC3600E72811 /* BuffMechanics.swift */,
+				78CBA853250BFC3600E72811 /* EntityMeachanics.swift */,
+				78CBA854250BFC3600E72811 /* CleaveMechanics.swift */,
+				78CBA855250BFC3600E72811 /* DeathRattleMechanics.swift */,
+			);
+			path = Mechanics;
+			sourceTree = "<group>";
+		};
+		78CBA85F250BFC3F00E72811 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA860250BFC3F00E72811 /* BattleLogger.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		78CBA862250BFC5C00E72811 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA863250BFC6100E72811 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		78CBA863250BFC6100E72811 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
+				78CBA864250BFC7300E72811 /* UnitCell.swift */,
+				78CBA866250BFC7800E72811 /* UnitDetail.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +221,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CBA85D250BFC3600E72811 /* DeathRattleMechanics.swift in Sources */,
+				78CBA865250BFC7300E72811 /* UnitCell.swift in Sources */,
+				78CBA867250BFC7800E72811 /* UnitDetail.swift in Sources */,
+				78CBA858250BFC3600E72811 /* Entity.swift in Sources */,
+				78CBA85E250BFC3600E72811 /* BattleGround.swift in Sources */,
+				78CBA859250BFC3600E72811 /* RebornMechanics.swift in Sources */,
+				78CBA85A250BFC3600E72811 /* BuffMechanics.swift in Sources */,
+				78CBA85C250BFC3600E72811 /* CleaveMechanics.swift in Sources */,
 				78CBA83D250BFC2600E72811 /* ContentView.swift in Sources */,
+				78CBA861250BFC3F00E72811 /* BattleLogger.swift in Sources */,
+				78CBA85B250BFC3600E72811 /* EntityMeachanics.swift in Sources */,
 				78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */,
+				78CBA857250BFC3600E72811 /* Board.swift in Sources */,
+				78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
