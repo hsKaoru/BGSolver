@@ -83,7 +83,6 @@
 				78CBA85F250BFC3F00E72811 /* Helpers */,
 				78CBA84D250BFC3600E72811 /* Models */,
 				78CBA83A250BFC2600E72811 /* AppDelegate.swift */,
-				78CBA83C250BFC2600E72811 /* MainView.swift */,
 				78CBA83E250BFC2700E72811 /* Assets.xcassets */,
 				78CBA843250BFC2700E72811 /* Main.storyboard */,
 				78CBA846250BFC2700E72811 /* Info.plist */,
@@ -143,6 +142,7 @@
 		78CBA863250BFC6100E72811 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78CBA83C250BFC2600E72811 /* MainView.swift */,
 				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
 				78CBA864250BFC7300E72811 /* UnitCell.swift */,
 				78CBA866250BFC7800E72811 /* UnitDetail.swift */,

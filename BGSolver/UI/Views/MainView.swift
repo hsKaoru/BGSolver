@@ -9,36 +9,51 @@
 import SwiftUI
 
 struct MainView: View {
+
+    @State var resultText = "WIN: 0% LOSE: 0% TIE:0%"
+
     var body: some View {
         VStack {
             HStack {
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
+                BoardView()
             }
             HStack {
-                Button(action: { self.testBattle() }) {
-                Text("Start battle")
+                Button(action: {
+                    self.resultText  = self.testBattle()
+                }) {
+                Text("Start Battle")
                 }
-                ResultTextView()
+                Text(resultText)
             }
             HStack {
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
-                UnitCell()
+                BoardView()
             }
         }
     }
+}
 
-    func testBattle() {
+struct BoardView: View {
+    var body: some View {
+        HStack {
+            UnitCell()
+            UnitCell()
+            UnitCell()
+            UnitCell()
+            UnitCell()
+            UnitCell()
+            UnitCell()
+        }
+    }
+}
+
+struct Main_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
+
+extension MainView {
+    func testBattle() -> String {
 
         var myBoard = Board()
 
@@ -66,30 +81,6 @@ struct MainView: View {
         }
 
         print(BG.battleLog.getLog())
-        print(BG.returnResultInPercent())
-
-    }
-}
-
-struct ResultTextView: View {
-    var result: String?
-    var body: some View {
-        Text(textForResult(text: result))
-    }
-
-    func textForResult(text: String?) -> String {
-        if let text = text {
-            return text
-        }
-        return "WIN: " + "0" + "% "
-        + "LOSE: " + "0" + "% "
-        + "TIE: " + "0" + "%"
-    }
-}
-
-
-struct Main_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
+        return(BG.returnResultInPercent())
     }
 }
