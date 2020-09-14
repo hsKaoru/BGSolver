@@ -107,9 +107,9 @@
 		78CBA84D250BFC3600E72811 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				78CBA850250BFC3600E72811 /* Mechanics */,
 				78CBA84E250BFC3600E72811 /* Board.swift */,
 				78CBA84F250BFC3600E72811 /* Entity.swift */,
-				78CBA850250BFC3600E72811 /* Mechanics */,
 				78CBA856250BFC3600E72811 /* BattleGround.swift */,
 			);
 			path = Models;

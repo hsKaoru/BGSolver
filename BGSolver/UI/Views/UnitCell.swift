@@ -20,10 +20,10 @@ func showUnitDetailWindow(unit: EntityViewModel) {
 
 struct UnitCell: View {
 
-    @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
+    @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: nil)
     var body: some View {
         HStack {
-            Image("legend").resizable().frame(width: 96, height: 96).overlay(UnitCellStatBar(value: Int(unit.attack)!, type: .attack),alignment: .bottomLeading).overlay(UnitCellStatBar(value: Int(unit.health)!, type: .hp),alignment: .bottomTrailing)
+            Image("legend").resizable().frame(width: 96, height: 96).overlay(UnitCellStatBar(value: unit.attack, type: .attack),alignment: .bottomLeading).overlay(UnitCellStatBar(value: unit.health, type: .hp),alignment: .bottomTrailing)
                 .gesture(TapGesture().onEnded({ showUnitDetailWindow(unit: self.unit)}))
         }
     }

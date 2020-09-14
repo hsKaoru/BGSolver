@@ -15,14 +15,14 @@ struct UnitCellStatBar: View {
         case hp
     }
 
-    let value: Int
+    let value: String
     let type: UnitBarType
 
     var body: some View {
             Circle()
                .strokeBorder(Color.black,lineWidth: 4)
                 .background(Circle().foregroundColor(getColorForBarType(type))).frame(width: 42, height: 42)
-                .overlay(Text(getValue(value))
+                .overlay(Text(value)
                     .foregroundColor(Color.black)
                     .lineLimit(1))
                     .font(.system(size: 18))
@@ -36,18 +36,11 @@ struct UnitCellStatBar: View {
                 return Color.red
         }
     }
-
-    func getValue(_ value: Int?) -> String {
-        if let value = value {
-            return String(value)
-        }
-        return "-"
-    }
 }
 
 struct UnitCellStatBar_Previews: PreviewProvider {
     static var previews: some View {
-        UnitCellStatBar(value: 3, type: .hp)
+        UnitCellStatBar(value: "3", type: .hp)
     }
 }
 
