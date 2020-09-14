@@ -14,6 +14,9 @@ struct UnitDetail: View {
 
     @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
 
+    @State private var showGreeting = false
+    
+
     var body: some View {
 
         HStack {
@@ -47,9 +50,19 @@ struct UnitDetail: View {
                      }
                 }
                 }.padding().frame(width: 170, height: 100)
+            VStack(alignment: .leading) {
+                Toggle(isOn: self.unit.$isBubble) {
+                    Text("Bubble")
+                }
+                Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(true)/*@END_MENU_TOKEN@*/) {
+                    Text("Taunt")
+                }
+                Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(true)/*@END_MENU_TOKEN@*/) {
+                    Text("Poison")
+                }
+            }
         }.padding()
     }
-
 }
 
 struct  UnitDetail_Previews: PreviewProvider {

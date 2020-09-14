@@ -7,12 +7,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 class EntityViewModel: ObservableObject {
     var unit: Entity?
 
     @Published var attack: String = "-"
     @Published var health: String = "-"
+    @State var isBubble = false
+    @Published var isPoisoned = false
+    @Published var isTaunt = false
 
 
     init(unit: Entity?) {
@@ -37,8 +41,9 @@ class EntityViewModel: ObservableObject {
         if let unit = unit {
             unit.attack += 1
         } else {
-            self.unit = Entity(attack: 1, health: 1)
+            self.unit = Entity(attack: 0, health: 1)
             updateUnitHealth()
+            self.unit?.isBubble = true
         }
         updateUnitAttack()
     }

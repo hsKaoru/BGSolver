@@ -25,7 +25,6 @@
 		78CBA865250BFC7300E72811 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA864250BFC7300E72811 /* UnitCell.swift */; };
 		78CBA867250BFC7800E72811 /* UnitDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA866250BFC7800E72811 /* UnitDetail.swift */; };
 		78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */; };
-		78CBA86B250C1A2E00E72811 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA86A250C1A2E00E72811 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		78CBA864250BFC7300E72811 /* UnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
 		78CBA866250BFC7800E72811 /* UnitDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitDetail.swift; sourceTree = "<group>"; };
 		78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitCellStatBar.swift; sourceTree = "<group>"; };
-		78CBA86A250C1A2E00E72811 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +157,6 @@
 				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
 				78CBA864250BFC7300E72811 /* UnitCell.swift */,
 				78CBA866250BFC7800E72811 /* UnitDetail.swift */,
-				78CBA86A250C1A2E00E72811 /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 				78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */,
 				78CBA857250BFC3600E72811 /* Board.swift in Sources */,
 				78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */,
-				78CBA86B250C1A2E00E72811 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
