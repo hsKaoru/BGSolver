@@ -81,6 +81,7 @@ extension MainView {
         for _ in 0..<100{
             BG.startBattle()
         }
+        print(BG.battleLog.getLog())
         return(BG.returnResultInPercent())
     }
 

@@ -37,6 +37,7 @@ class BattleGround {
         for units in enemyBoard.units {
             enemyStartBoard.append(units.copy())
         }
+        resetBoards()
     }
 
     func startBattle() {
