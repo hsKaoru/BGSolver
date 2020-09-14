@@ -14,7 +14,15 @@ class EntityViewModel: ObservableObject {
 
     @Published var attack: String = "-"
     @Published var health: String = "-"
-    @State var isBubble = false
+    @Published var isBubble = false {
+        willSet {
+            print(unit?.isBubble)
+        }
+        didSet {
+            unit?.isBubble.toggle()
+            print(unit?.isBubble)
+        }
+    }
     @Published var isPoisoned = false
     @Published var isTaunt = false
 

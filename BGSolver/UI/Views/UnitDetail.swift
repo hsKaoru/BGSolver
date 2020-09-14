@@ -14,9 +14,6 @@ struct UnitDetail: View {
 
     @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
 
-    @State private var showGreeting = false
-    
-
     var body: some View {
 
         HStack {
@@ -36,7 +33,7 @@ struct UnitDetail: View {
                     Button(action: { self.unit.decreaseAttack()
                     }) {
                          Text("-")
-                     }
+                    }
                 }
                 VStack{
                     Text("Health: " + self.unit.health)
@@ -51,15 +48,22 @@ struct UnitDetail: View {
                 }
                 }.padding().frame(width: 170, height: 100)
             VStack(alignment: .leading) {
-                Toggle(isOn: self.unit.$isBubble) {
-                    Text("Bubble")
-                }
-                Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-                    Text("Taunt")
-                }
-                Toggle(isOn: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(true)/*@END_MENU_TOKEN@*/) {
-                    Text("Poison")
-                }
+                Button(action: { guard let _ = self.unit.unit else { return }
+                    self.unit.isBubble.toggle()
+                    }) {
+                        Text("Bubble")
+                            .frame(width: 50)
+                    }.background(getColorForPropertiesButtons(statValue: unit.isBubble)).cornerRadius(5)
+                Button(action: { guard let _ = self.unit.unit else { return }
+                    self.unit.isTaunt.toggle()
+                    }) {
+                        Text("Taunt").frame(width: 50)
+                 }.background(getColorForPropertiesButtons(statValue: unit.isTaunt)).cornerRadius(5)
+                Button(action: { guard let _ = self.unit.unit else { return }
+                    self.unit.isPoisoned.toggle()
+                    }) {
+                        Text("Poison").frame(width: 50)
+                 }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
             }
         }.padding()
     }
@@ -68,5 +72,16 @@ struct UnitDetail: View {
 struct  UnitDetail_Previews: PreviewProvider {
     static var previews: some View {
         UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit: Entity()))
+    }
+}
+
+extension UnitDetail {
+    func getColorForPropertiesButtons(statValue: Bool?) -> Color {
+        if let value = statValue {
+            if value {
+                return Color.blue
+            }
+        }
+        return Color.black
     }
 }
