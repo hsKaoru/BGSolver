@@ -15,16 +15,20 @@ class EntityViewModel: ObservableObject {
     @Published var attack: String = "-"
     @Published var health: String = "-"
     @Published var isBubble = false {
-        willSet {
-            print(unit?.isBubble)
-        }
         didSet {
-            unit?.isBubble.toggle()
-            print(unit?.isBubble)
+            unit?.isBubble = self.isBubble
         }
     }
-    @Published var isPoisoned = false
-    @Published var isTaunt = false
+    @Published var isPoisoned = false {
+        didSet {
+            unit?.isPoisoned = self.isPoisoned
+        }
+    }
+    @Published var isTaunt = false {
+        didSet {
+            unit?.isTaunt = self.isTaunt
+        }
+    }
 
 
     init(unit: Entity?) {
@@ -51,7 +55,6 @@ class EntityViewModel: ObservableObject {
         } else {
             self.unit = Entity(attack: 0, health: 1)
             updateUnitHealth()
-            self.unit?.isBubble = true
         }
         updateUnitAttack()
     }

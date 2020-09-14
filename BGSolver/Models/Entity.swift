@@ -31,8 +31,8 @@ class Entity {
 
     //MARK: - mechanics properties
     var isBubble: Bool
-    let isTaunt: Bool
-    let isPoisoned: Bool
+    var isTaunt: Bool
+    var isPoisoned: Bool
     var mechanics: [EntityMeachanics]
 
     //MARK: - unit status properties
