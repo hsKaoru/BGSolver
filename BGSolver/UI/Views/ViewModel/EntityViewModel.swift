@@ -36,6 +36,9 @@ class EntityViewModel: ObservableObject {
     func increaseAttack() {
         if let unit = unit {
             unit.attack += 1
+        } else {
+            self.unit = Entity(attack: 1, health: 1)
+            updateUnitHealth()
         }
         updateUnitAttack()
     }
@@ -50,6 +53,9 @@ class EntityViewModel: ObservableObject {
     func increaseHealth() {
         if let unit = unit {
             unit.health += 1
+        } else {
+            self.unit = Entity(attack: 0, health: 1)
+            updateUnitAttack()
         }
         updateUnitHealth()
     }

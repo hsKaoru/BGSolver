@@ -17,7 +17,12 @@ struct UnitDetail: View {
     var body: some View {
 
         HStack {
+            VStack {
+                Button(action: {self.unit.deleteEntity()}) {
+                Text("Clear")
+            }
             Image("legend").resizable().frame(width: 64, height: 64)
+            }
             HStack {
                 VStack{
                     Text("Attack: " + self.unit.attack)
@@ -42,7 +47,7 @@ struct UnitDetail: View {
                      }
                 }
                 }.padding().frame(width: 170, height: 100)
-        }
+        }.padding()
     }
 
 }
