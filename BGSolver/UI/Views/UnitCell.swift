@@ -9,9 +9,10 @@
 import SwiftUI
 
 func showUnitDetailWindow(unit: EntityViewModel) {
+    let mouseLocation = NSEvent.mouseLocation
     var windowRef:NSWindow
     windowRef = NSWindow(
-        contentRect: NSRect(x: 100, y: 100, width: 100, height: 100),
+        contentRect: NSRect(x: mouseLocation.x+24, y: mouseLocation.y, width: 100, height: 100),
         styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView],
         backing: .buffered, defer: false)
     windowRef.contentView = NSHostingView(rootView: UnitDetail(detailViewWindow: windowRef, unit: unit))
