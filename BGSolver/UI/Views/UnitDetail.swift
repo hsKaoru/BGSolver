@@ -13,8 +13,6 @@ struct UnitDetail: View {
     let detailViewWindow:NSWindow?
 
     @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
-    @State var attackText = "-"
-    @State var hpText = "-"
 
     var body: some View {
 
