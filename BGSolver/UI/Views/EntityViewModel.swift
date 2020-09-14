@@ -9,7 +9,7 @@
 import Foundation
 
 class EntityViewModel: ObservableObject {
-    let unit: Entity?
+    var unit: Entity?
 
     @Published var attack: String = "-"
     @Published var health: String = "-"
@@ -55,9 +55,15 @@ class EntityViewModel: ObservableObject {
     }
 
     func decreaseHealth() {
-        if let unit = unit, unit.attack > 0 {
+        if let unit = unit, unit.health > 1 {
             unit.health -= 1
         }
+        updateUnitHealth()
+    }
+
+    func deleteEntity() {
+        self.unit = nil
+        updateUnitAttack()
         updateUnitHealth()
     }
 
