@@ -15,7 +15,7 @@ struct UnitCellStatBar: View {
         case hp
     }
 
-    let value: Int?
+    let value: Int
     let type: UnitBarType
 
     var body: some View {

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-func showUnitDetailWindow(unit: Entity?) {
+func showUnitDetailWindow(unit: EntityViewModel) {
     var windowRef:NSWindow
     windowRef = NSWindow(
         contentRect: NSRect(x: 100, y: 100, width: 100, height: 100),
@@ -20,10 +20,10 @@ func showUnitDetailWindow(unit: Entity?) {
 
 struct UnitCell: View {
 
-    var unit: Entity?
+    var unit: EntityViewModel = EntityViewModel(unit: Entity())
     var body: some View {
         HStack {
-            Image("legend").resizable().frame(width: 96, height: 96).overlay(UnitCellStatBar(value: unit?.attack, type: .attack),alignment: .bottomLeading).overlay(UnitCellStatBar(value: unit?.health, type: .hp),alignment: .bottomTrailing)
+            Image("legend").resizable().frame(width: 96, height: 96).overlay(UnitCellStatBar(value: Int(unit.attack)!, type: .attack),alignment: .bottomLeading).overlay(UnitCellStatBar(value: Int(unit.health)!, type: .hp),alignment: .bottomTrailing)
                 .gesture(TapGesture().onEnded({ showUnitDetailWindow(unit: self.unit)}))
         }
     }
@@ -32,6 +32,6 @@ struct UnitCell: View {
 
 struct UnitCell_Previews: PreviewProvider {
     static var previews: some View {
-        UnitCell(unit: Entity())
+        UnitCell(unit: EntityViewModel(unit: Entity()))
     }
 }

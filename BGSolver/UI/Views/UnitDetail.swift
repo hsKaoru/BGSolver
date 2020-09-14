@@ -12,7 +12,7 @@ struct UnitDetail: View {
 
     let detailViewWindow:NSWindow?
 
-    @State var unit: Entity? = Entity()
+    @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
     @State var attackText = "-"
     @State var hpText = "-"
 
@@ -22,27 +22,24 @@ struct UnitDetail: View {
             Image("legend").resizable().frame(width: 64, height: 64)
             HStack {
                 VStack{
-                    Text("Attack: " + attackText)
-                    Button(action: { self.increaseAttack()
-                        self.attackText = self.getUnitAttack()
+                    Text("Attack: " + self.unit.attack)
+                    Button(action: { self.unit.increaseAttack()
                     }) {
                         Text("+")
                     }
-                    Button(action: { self.decreaseAttack()
-                        self.attackText = self.getUnitAttack()
+                    Button(action: { self.unit.decreaseAttack()
                     }) {
                          Text("-")
                      }
                 }
                 VStack{
-                    Text("Health: " + hpText)
-                    Button(action: { self.increaseHealth()
-                        self.hpText = self.getUnitHealth()
+                    Text("Health: " + self.unit.health)
+                    Button(action: { self.unit.increaseHealth()
                     }) {
                         Text("+")
                     }
-                    Button(action: { self.decreaseHealth()
-                    self.hpText = self.getUnitHealth()}) {
+                    Button(action: { self.unit.decreaseHealth()
+                        self.hpText = self.unit.getUnitHealth()}) {
                          Text("-")
                      }
                 }
@@ -50,46 +47,10 @@ struct UnitDetail: View {
         }
     }
 
-    func getUnitAttack() -> String {
-        if let attack = unit?.attack {
-            return String(attack) }
-        return "-"
-    }
-
-    func getUnitHealth() -> String {
-        if let health = unit?.health {
-            return String(health) }
-        return "-"
-    }
-
-    func increaseAttack() {
-        if let unit = unit {
-            unit.attack += 1
-        }
-    }
-
-    func decreaseAttack() {
-        if let unit = unit, unit.attack > 0 {
-            unit.attack -= 1
-        }
-    }
-
-    func increaseHealth() {
-        if let unit = unit {
-            unit.health += 1
-        }
-    }
-
-    func decreaseHealth() {
-        if let unit = unit, unit.attack > 0 {
-            unit.health -= 1
-        }
-    }
-
 }
 
 struct  UnitDetail_Previews: PreviewProvider {
     static var previews: some View {
-        UnitDetail(detailViewWindow: nil, unit: Entity())
+        UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit: Entity()))
     }
 }
