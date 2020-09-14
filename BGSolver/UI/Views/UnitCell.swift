@@ -20,7 +20,7 @@ func showUnitDetailWindow(unit: EntityViewModel) {
 
 struct UnitCell: View {
 
-    var unit: EntityViewModel = EntityViewModel(unit: Entity())
+    @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
     var body: some View {
         HStack {
             Image("legend").resizable().frame(width: 96, height: 96).overlay(UnitCellStatBar(value: Int(unit.attack)!, type: .attack),alignment: .bottomLeading).overlay(UnitCellStatBar(value: Int(unit.health)!, type: .hp),alignment: .bottomTrailing)

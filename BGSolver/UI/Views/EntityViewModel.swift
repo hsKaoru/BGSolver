@@ -17,44 +17,48 @@ class EntityViewModel: ObservableObject {
 
     init(unit: Entity?) {
         self.unit = unit
-        self.attack = getUnitAttack()
-        self.health = getUnitHealth()
+        updateUnitAttack()
+        updateUnitHealth()
     }
 
-    func getUnitAttack() -> String {
+    func updateUnitAttack() {
         if let attack = unit?.attack {
-            return String(attack) }
-        return "-"
+            self.attack = String(attack) } else {
+            self.attack = "-" }
     }
 
-    func getUnitHealth() -> String {
-        if let attack = unit?.attack {
-            return String(attack) }
-        return "-"
+    func updateUnitHealth() {
+        if let health = unit?.health {
+            self.health = String(health) } else {
+            self.health = "-" }
     }
 
     func increaseAttack() {
         if let unit = unit {
             unit.attack += 1
         }
+        updateUnitAttack()
     }
 
     func decreaseAttack() {
         if let unit = unit, unit.attack > 0 {
             unit.attack -= 1
         }
+        updateUnitAttack()
     }
 
     func increaseHealth() {
         if let unit = unit {
             unit.health += 1
         }
+        updateUnitHealth()
     }
 
     func decreaseHealth() {
         if let unit = unit, unit.attack > 0 {
             unit.health -= 1
         }
+        updateUnitHealth()
     }
 
 }

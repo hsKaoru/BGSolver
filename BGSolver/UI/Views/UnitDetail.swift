@@ -39,7 +39,7 @@ struct UnitDetail: View {
                         Text("+")
                     }
                     Button(action: { self.unit.decreaseHealth()
-                        self.hpText = self.unit.getUnitHealth()}) {
+                        }) {
                          Text("-")
                      }
                 }
