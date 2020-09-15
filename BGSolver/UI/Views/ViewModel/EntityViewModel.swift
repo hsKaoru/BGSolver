@@ -95,6 +95,8 @@ class EntityViewModel: ObservableObject {
 }
 
 extension EntityViewModel {
+    
+
     func fetchMechanicText(_ mechanic: EntityMeachanics) -> String {
         switch mechanic.type {
         case .deathrattle:
@@ -121,5 +123,12 @@ extension EntityViewModel {
                 self.mechanicsText.append(fetchMechanicText(mechanics)+"\n")
             }
         }
+    }
+
+    func addMechanicsDeathrattle() {
+        if let unit = unit {
+            unit.mechanics.append(DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
+        }
+        mechanicsTextShaping()
     }
 }

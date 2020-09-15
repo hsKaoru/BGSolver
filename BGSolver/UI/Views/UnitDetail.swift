@@ -72,13 +72,29 @@ struct UnitDetail: View {
 
 struct MechanicsDetailView: View {
     @ObservedObject var unit: EntityViewModel
+    @State private var showingPopover:Bool = false
 
     var body: some View {
         HStack {
         ScrollView {
             Text(unit.mechanicsText).foregroundColor(Color.gray).padding(1).frame(width:215)
             }.frame(width: 220, height: 80).border(Color.gray, width: 1)
-        Button("Add Mechanics", action: {})
+            Button("Add Mechanics", action: {
+                if let _ = self.unit.unit {
+                    self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack {
+                                   Button(action: {
+                                       self.unit.addMechanicsDeathrattle()
+                                       self.showingPopover = false
+                                   }) {
+                                       Text("Replicator Deathrattle")
+                                   }
+                                   Button(action: {
+                                       // Do something
+                                       self.showingPopover = false
+                                   }) {
+                                       Text("Test")
+                                   }
+                               }.background(Color.gray)}
         }
     }
 }
