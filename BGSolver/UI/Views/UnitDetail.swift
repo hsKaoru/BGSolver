@@ -83,18 +83,18 @@ struct MechanicsDetailView: View {
                 if let _ = self.unit.unit {
                     self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack {
                                    Button(action: {
-                                       self.unit.addMechanicsDeathrattle()
+                                       self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
                                        self.showingPopover = false
                                    }) {
-                                       Text("Replicator Deathrattle")
+                                       Text("Replicator")
                                    }
                                    Button(action: {
-                                       // Do something
+                                        self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
                                        self.showingPopover = false
                                    }) {
-                                       Text("Test")
+                                       Text("Golden Replicator")
                                    }
-                               }.background(Color.gray)}
+                               }}
         }
     }
 }

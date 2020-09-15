@@ -90,6 +90,7 @@ class EntityViewModel: ObservableObject {
         self.unit = nil
         updateUnitAttack()
         updateUnitHealth()
+        mechanicsTextShaping()
     }
 
 }
@@ -125,9 +126,9 @@ extension EntityViewModel {
         }
     }
 
-    func addMechanicsDeathrattle() {
+    func addMechanic(mechanic: EntityMeachanics) {
         if let unit = unit {
-            unit.mechanics.append(DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
+            unit.mechanics.append(mechanic)
         }
         mechanicsTextShaping()
     }
