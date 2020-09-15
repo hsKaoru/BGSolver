@@ -36,38 +36,6 @@ struct MainView: View {
     }
 }
 
-struct BoardView: View {
-    let UnitSlot1 = UnitCell()
-    let UnitSlot2 = UnitCell()
-    let UnitSlot3 = UnitCell()
-    let UnitSlot4 = UnitCell()
-    let UnitSlot5 = UnitCell()
-    let UnitSlot6 = UnitCell()
-    let UnitSlot7 = UnitCell()
-
-
-    var body: some View {
-        HStack {
-            UnitSlot1
-            UnitSlot2
-            UnitSlot3
-            UnitSlot4
-            UnitSlot5
-            UnitSlot6
-            UnitSlot7
-        }
-    }
-
-    func getBoard() -> Board {
-        let board = Board()
-        for unitSlot in [UnitSlot1,UnitSlot2,UnitSlot3,UnitSlot4,UnitSlot5,UnitSlot6,UnitSlot7] {
-            if let unit = unitSlot.unit.unit {
-                board.addUnit(unit: unit)
-            }
-        }
-        return board
-    }
-}
 
 struct Main_Previews: PreviewProvider {
     static var previews: some View {

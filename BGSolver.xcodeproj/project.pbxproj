@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78209020250EE76E006C7697 /* EntityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820901F250EE76E006C7697 /* EntityViewModel.swift */; };
+		782090232510F783006C7697 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782090222510F783006C7697 /* BoardView.swift */; };
 		78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA83A250BFC2600E72811 /* AppDelegate.swift */; };
 		78CBA83D250BFC2600E72811 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA83C250BFC2600E72811 /* MainView.swift */; };
 		78CBA83F250BFC2700E72811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA83E250BFC2700E72811 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		7820901F250EE76E006C7697 /* EntityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityViewModel.swift; sourceTree = "<group>"; };
+		782090222510F783006C7697 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		78CBA837250BFC2600E72811 /* BGSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CBA83A250BFC2600E72811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78CBA83C250BFC2600E72811 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				78209021250EF3D6006C7697 /* ViewModel */,
 				78CBA83C250BFC2600E72811 /* MainView.swift */,
+				782090222510F783006C7697 /* BoardView.swift */,
 				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
 				78CBA864250BFC7300E72811 /* UnitCell.swift */,
 				78CBA866250BFC7800E72811 /* UnitDetail.swift */,
@@ -246,6 +249,7 @@
 				78CBA85B250BFC3600E72811 /* EntityMeachanics.swift in Sources */,
 				78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */,
 				78CBA857250BFC3600E72811 /* Board.swift in Sources */,
+				782090232510F783006C7697 /* BoardView.swift in Sources */,
 				78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
