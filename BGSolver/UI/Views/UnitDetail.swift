@@ -26,25 +26,17 @@ struct UnitDetail: View {
             HStack {
                 VStack{
                     Text("Attack: " + self.unit.attack)
-                    Button(action: { self.unit.increaseAttack()
-                    }) {
-                        Text("+")
-                    }
-                    Button(action: { self.unit.decreaseAttack()
-                    }) {
-                         Text("-")
-                    }
+                    Button("+", action: { self.unit.increaseAttack()
+                    })
+                    Button("-",action: { self.unit.decreaseAttack()
+                    })
                 }
                 VStack{
                     Text("Health: " + self.unit.health)
-                    Button(action: { self.unit.increaseHealth()
-                    }) {
-                        Text("+")
-                    }
-                    Button(action: { self.unit.decreaseHealth()
-                        }) {
-                         Text("-")
-                     }
+                    Button("+", action: { self.unit.increaseHealth()
+                    })
+                    Button("-", action: { self.unit.decreaseHealth()
+                        }) 
                 }
                 }.padding().frame(width: 170, height: 100)
             VStack(alignment: .leading) {
@@ -81,8 +73,7 @@ struct MechanicsDetailView: View {
             }.frame(width: 220, height: 80).border(Color.gray, width: 1)
             Button("Add Mechanics", action: {
                 if let _ = self.unit.unit {
-                    self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack {
-                                   Button(action: {
+                    self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack { Button(action: {
                                        self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
                                        self.showingPopover = false
                                    }) {
@@ -94,7 +85,8 @@ struct MechanicsDetailView: View {
                                    }) {
                                        Text("Golden Replicator")
                                    }
-                               }}
+                        }
+            }
         }
     }
 }
