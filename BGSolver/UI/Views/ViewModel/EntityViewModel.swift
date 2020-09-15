@@ -30,11 +30,14 @@ class EntityViewModel: ObservableObject {
         }
     }
 
+    @Published var mechanicsText: String = ""
+
 
     init(unit: Entity?) {
         self.unit = unit
         updateUnitAttack()
         updateUnitHealth()
+        mechanicsTextShaping()
     }
 
     func updateUnitAttack() {
@@ -89,4 +92,34 @@ class EntityViewModel: ObservableObject {
         updateUnitHealth()
     }
 
+}
+
+extension EntityViewModel {
+    func fetchMechanicText(_ mechanic: EntityMeachanics) -> String {
+        switch mechanic.type {
+        case .deathrattle:
+            if let _ = mechanic as? RivendareMechanics {
+                return "Your minions trigger their Deathrattles twice"
+            }
+            return "DeathRattle"
+        case .buff:
+            if let buff = mechanic as? BuffMechanics {
+                return "Give a friendly \(buff.buffedRace) +\(buff.attackBuffCount)/+\(buff.healthBuffCount)"
+            }
+            return ""
+        case .cleave:
+            return "Also Damages the minions next to whomever this attacks"
+        case .reborn:
+            return "Reborn"
+        }
+    }
+
+    func mechanicsTextShaping() {
+        self.mechanicsText = ""
+        if let unit = unit {
+            for mechanics in unit.mechanics {
+                self.mechanicsText.append(fetchMechanicText(mechanics)+"\n")
+            }
+        }
+    }
 }

@@ -66,18 +66,26 @@ struct UnitDetail: View {
                  }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
             }
         }.padding()
-            HStack {
-            ScrollView {
-                Text("1. Призвать 3 механизма 1-1 и взорвать бомбу\n2. Нанести 4 урона случайному юниту противника\n3. Также наносит урон по обе стороны от цели")
-            }.frame(width: 180, height: 80).border(Color.gray, width: 1)
-            Button("Add Mechanics", action: {})
-            }}.padding()
+            MechanicsDetailView(unit: unit)}.padding()
+    }
+}
+
+struct MechanicsDetailView: View {
+    @ObservedObject var unit: EntityViewModel
+
+    var body: some View {
+        HStack {
+        ScrollView {
+            Text(unit.mechanicsText).foregroundColor(Color.gray).padding(1).frame(width:215)
+            }.frame(width: 220, height: 80).border(Color.gray, width: 1)
+        Button("Add Mechanics", action: {})
+        }
     }
 }
 
 struct  UnitDetail_Previews: PreviewProvider {
     static var previews: some View {
-        UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit: Entity()))
+        UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit:   Entity(attack: 2, health: 2, mechanics: [AurasBuffMechanics(forRace: .murloc, attackBuffCount: 2, healthBuffCount: 0), DeathRattleMechanics(withDamageForOppositeBoard: 4), RebornMechanics(RebornedUnit: Entity(attack: 2, health: 1, mechanics: [DeathRattleMechanics(withDamageForOppositeBoard: 4)]))])))
     }
 }
 
