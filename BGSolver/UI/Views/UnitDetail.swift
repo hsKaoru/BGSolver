@@ -15,7 +15,7 @@ struct UnitDetail: View {
     @ObservedObject var unit: EntityViewModel = EntityViewModel(unit: Entity())
 
     var body: some View {
-
+        VStack {
         HStack {
             VStack {
                 Button(action: {self.unit.deleteEntity()}) {
@@ -66,6 +66,12 @@ struct UnitDetail: View {
                  }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
             }
         }.padding()
+            HStack {
+            ScrollView {
+                Text("1. Призвать 3 механизма 1-1 и взорвать бомбу\n2. Нанести 4 урона случайному юниту противника\n3. Также наносит урон по обе стороны от цели")
+            }.frame(width: 180, height: 80).border(Color.gray, width: 1)
+            Button("Add Mechanics", action: {})
+            }}.padding()
     }
 }
 

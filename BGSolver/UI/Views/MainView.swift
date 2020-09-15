@@ -23,7 +23,6 @@ struct MainView: View {
             HStack {
                 Button(action: {
                     self.resultText  = self.startBattle(bottomBoard: self.bottomBoardView.getBoard(), topBoard: self.topBoardView.getBoard())
-                  //  self.resultText  = self.testBattle()
                 }) {
                 Text("Start Battle")
                 }
