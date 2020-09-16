@@ -16,49 +16,48 @@ struct UnitDetail: View {
 
     var body: some View {
         VStack {
-        HStack {
-            VStack {
-                HStack {
-                PickUnitView()
-                Button("Clear", action: {self.unit.deleteEntity()})
-                }
-            Image("legend").resizable().frame(width: 64, height: 64)
-            }
             HStack {
-                VStack{
-                    Text("Attack: " + self.unit.attack)
-                    Button("+", action: { self.unit.increaseAttack()
-                    })
-                    Button("-",action: { self.unit.decreaseAttack()
-                    })
+                VStack {
+                    HStack {
+                        PickUnitView()
+                        Button("Clear", action: {self.unit.deleteEntity()})
+                    }
+                    Image("legend").resizable().frame(width: 64, height: 64)
                 }
-                VStack{
-                    Text("Health: " + self.unit.health)
-                    Button("+", action: { self.unit.increaseHealth()
-                    })
-                    Button("-", action: { self.unit.decreaseHealth()
+                HStack {
+                    VStack{
+                        Text("Attack: " + self.unit.attack)
+                        Button("+", action: { self.unit.increaseAttack()
+                        })
+                        Button("-",action: { self.unit.decreaseAttack()
+                        })
+                    }
+                    VStack{
+                        Text("Health: " + self.unit.health)
+                        Button("+", action: { self.unit.increaseHealth()
+                        })
+                        Button("-", action: { self.unit.decreaseHealth()
                         }) 
-                }
+                    }
                 }.padding().frame(width: 170, height: 100)
-            VStack(alignment: .leading) {
-                Button(action: { guard self.unit.isUnitNotNil() else { return }
-                    self.unit.isBubble.toggle()
+                VStack(alignment: .leading) {
+                    Button(action: { guard self.unit.isUnitNotNil() else { return }
+                        self.unit.isBubble.toggle()
                     }) {
-                        Text("Bubble")
-                            .frame(width: 50)
+                        Text("Bubble").frame(width: 50)
                     }.background(getColorForPropertiesButtons(statValue: unit.isBubble)).cornerRadius(5)
-                Button(action: { guard self.unit.isUnitNotNil() else { return }
-                    self.unit.isTaunt.toggle()
+                    Button(action: { guard self.unit.isUnitNotNil() else { return }
+                        self.unit.isTaunt.toggle()
                     }) {
                         Text("Taunt").frame(width: 50)
-                 }.background(getColorForPropertiesButtons(statValue: unit.isTaunt)).cornerRadius(5)
-                Button(action: { guard self.unit.isUnitNotNil() else { return }
-                    self.unit.isPoisoned.toggle()
+                    }.background(getColorForPropertiesButtons(statValue: unit.isTaunt)).cornerRadius(5)
+                    Button(action: { guard self.unit.isUnitNotNil() else { return }
+                        self.unit.isPoisoned.toggle()
                     }) {
                         Text("Poison").frame(width: 50)
-                 }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
+                    }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
+                }
             }
-        }
             MechanicsDetailView(unit: unit)}.padding()
     }
 }

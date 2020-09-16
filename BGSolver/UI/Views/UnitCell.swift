@@ -29,7 +29,7 @@ struct UnitCell: View {
                 .resizable()
                 .frame(width: 96, height: 96)
                 .overlay(UnitCellStatBar(value: unit.attack, type: .attack),alignment: .bottomLeading)
-                    .overlay(UnitCellStatBar(value: unit.health, type: .hp),alignment: .bottomTrailing)
+                .overlay(UnitCellStatBar(value: unit.health, type: .hp),alignment: .bottomTrailing)
                 .gesture(TapGesture().onEnded({ showUnitDetailWindow(unit: self.unit)}))
         }
     }

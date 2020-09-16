@@ -23,9 +23,9 @@ struct UnitCellStatBar: View {
                .strokeBorder(Color.black,lineWidth: 4)
                 .background(Circle().foregroundColor(getColorForBarType(type))).frame(width: 42, height: 42)
                 .overlay(Text(value)
-                    .foregroundColor(Color.black)
-                    .lineLimit(1))
-                    .font(.system(size: 18))
+                .foregroundColor(Color.black)
+                .lineLimit(1))
+                .font(.system(size: 18))
     }
 
     func getColorForBarType(_ type: UnitBarType) -> Color {

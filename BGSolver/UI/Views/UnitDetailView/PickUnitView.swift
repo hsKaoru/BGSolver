@@ -25,16 +25,16 @@ struct PickUnitView: View {
     var body: some View {
         Button(Options.iconSymbol, action: { self.showingPopover.toggle() })
             .popover(isPresented: self.$showingPopover) {
-            List {
-                ForEach(1..<Options.maxTier) { tierIndex in
-                    Section(header: Text("Tier \(tierIndex) units")) {
-                    ForEach(0..<self.count) { index in
-                            PickUnitTableRowView()
+                List {
+                    ForEach(1..<Options.maxTier) { tierIndex in
+                        Section(header: Text("Tier \(tierIndex) units")) {
+                            ForEach(0..<self.count) { index in
+                                PickUnitTableRowView()
+                            }
                         }
                     }
-                }
-            }.frame(width: Options.frameWidth,
-                    height: Options.frameHeight)
+                }.frame(width: Options.frameWidth,
+                        height: Options.frameHeight)
         }
     }
 }
@@ -48,14 +48,14 @@ struct PickUnitTableRowView: View {
     var body: some View {
         HStack() {
             Button(action: {
-                     }) {
-                        HStack {
-                            Image("legend")
-                                .resizable()
-                                .frame(width: Options.imageSize,
-                                       height: Options.imageSize)
-                            Text("Hydra")
-                        }.frame(width: Options.rowFrameWidth)
+            }) {
+                HStack {
+                    Image("legend")
+                        .resizable()
+                        .frame(width: Options.imageSize,
+                               height: Options.imageSize)
+                    Text("Hydra")
+                }.frame(width: Options.rowFrameWidth)
 
             }.buttonStyle(PickUnitButtonStyle())
         }
