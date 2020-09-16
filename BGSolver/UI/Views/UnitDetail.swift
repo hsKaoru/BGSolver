@@ -18,9 +18,10 @@ struct UnitDetail: View {
         VStack {
         HStack {
             VStack {
-                Button(action: {self.unit.deleteEntity()}) {
-                Text("Clear")
-            }
+                HStack {
+                PickUnitView()
+                Button("Clear", action: {self.unit.deleteEntity()})
+                }
             Image("legend").resizable().frame(width: 64, height: 64)
             }
             HStack {
@@ -57,7 +58,7 @@ struct UnitDetail: View {
                         Text("Poison").frame(width: 50)
                  }.background(getColorForPropertiesButtons(statValue: unit.isPoisoned)).cornerRadius(5)
             }
-        }.padding()
+        }
             MechanicsDetailView(unit: unit)}.padding()
     }
 }
@@ -88,6 +89,20 @@ struct MechanicsDetailView: View {
                         }
             }
         }
+    }
+}
+
+struct PickUnitView: View {
+    @State private var showingPopover:Bool = false
+    var count = 70
+
+    var body: some View {
+        Button("▼", action: { self.showingPopover.toggle() })
+            .popover(isPresented: self.$showingPopover) { List {
+                ForEach(0..<self.count) { index in
+                    Text("PickMe")
+                }
+                }}
     }
 }
 
