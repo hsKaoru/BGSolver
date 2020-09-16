@@ -10,10 +10,11 @@ import Foundation
 import SwiftUI
 
 class EntityViewModel: ObservableObject {
-    var unit: Entity?
+    private var unit: Entity?
 
     @Published var attack: String = "-"
     @Published var health: String = "-"
+
     @Published var isBubble = false {
         didSet {
             unit?.isBubble = self.isBubble
@@ -91,6 +92,14 @@ class EntityViewModel: ObservableObject {
         updateUnitAttack()
         updateUnitHealth()
         mechanicsTextShaping()
+    }
+
+    func isUnitNotNil() -> Bool {
+        return self.unit != nil
+    }
+
+    func getUnit() -> Entity? {
+        return self.unit ?? nil
     }
 
 }

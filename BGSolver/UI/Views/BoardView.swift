@@ -22,7 +22,7 @@ struct BoardView: View {
     func getBoard() -> Board {
         let board = Board()
         for unitSlot in unitCells {
-            if let unit = unitSlot.unit.unit {
+            if let unit = unitSlot.unit.getUnit() {
                 board.addUnit(unit: unit)
             }
         }

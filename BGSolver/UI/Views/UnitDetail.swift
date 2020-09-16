@@ -41,18 +41,18 @@ struct UnitDetail: View {
                 }
                 }.padding().frame(width: 170, height: 100)
             VStack(alignment: .leading) {
-                Button(action: { guard let _ = self.unit.unit else { return }
+                Button(action: { guard self.unit.isUnitNotNil() else { return }
                     self.unit.isBubble.toggle()
                     }) {
                         Text("Bubble")
                             .frame(width: 50)
                     }.background(getColorForPropertiesButtons(statValue: unit.isBubble)).cornerRadius(5)
-                Button(action: { guard let _ = self.unit.unit else { return }
+                Button(action: { guard self.unit.isUnitNotNil() else { return }
                     self.unit.isTaunt.toggle()
                     }) {
                         Text("Taunt").frame(width: 50)
                  }.background(getColorForPropertiesButtons(statValue: unit.isTaunt)).cornerRadius(5)
-                Button(action: { guard let _ = self.unit.unit else { return }
+                Button(action: { guard self.unit.isUnitNotNil() else { return }
                     self.unit.isPoisoned.toggle()
                     }) {
                         Text("Poison").frame(width: 50)
@@ -73,7 +73,7 @@ struct MechanicsDetailView: View {
             Text(unit.mechanicsText).foregroundColor(Color.gray).padding(1).frame(width:215)
             }.frame(width: 220, height: 80).border(Color.gray, width: 1)
             Button("Add Mechanics", action: {
-                if let _ = self.unit.unit {
+                if self.unit.isUnitNotNil() {
                     self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack { Button(action: {
                                        self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
                                        self.showingPopover = false
