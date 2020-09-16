@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		78209020250EE76E006C7697 /* EntityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820901F250EE76E006C7697 /* EntityViewModel.swift */; };
 		782090232510F783006C7697 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782090222510F783006C7697 /* BoardView.swift */; };
+		782090282512C207006C7697 /* MechanicsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782090272512C207006C7697 /* MechanicsDetailView.swift */; };
+		7820902A2512C256006C7697 /* PickUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782090292512C256006C7697 /* PickUnitView.swift */; };
 		78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA83A250BFC2600E72811 /* AppDelegate.swift */; };
 		78CBA83D250BFC2600E72811 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA83C250BFC2600E72811 /* MainView.swift */; };
 		78CBA83F250BFC2700E72811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA83E250BFC2700E72811 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		7820901F250EE76E006C7697 /* EntityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityViewModel.swift; sourceTree = "<group>"; };
 		782090222510F783006C7697 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		782090272512C207006C7697 /* MechanicsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicsDetailView.swift; sourceTree = "<group>"; };
+		782090292512C256006C7697 /* PickUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUnitView.swift; sourceTree = "<group>"; };
 		78CBA837250BFC2600E72811 /* BGSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CBA83A250BFC2600E72811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78CBA83C250BFC2600E72811 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,16 @@
 				7820901F250EE76E006C7697 /* EntityViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		782090262512C1E3006C7697 /* UnitDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA866250BFC7800E72811 /* UnitDetail.swift */,
+				782090272512C207006C7697 /* MechanicsDetailView.swift */,
+				782090292512C256006C7697 /* PickUnitView.swift */,
+			);
+			path = UnitDetailView;
 			sourceTree = "<group>";
 		};
 		78CBA82E250BFC2600E72811 = {
@@ -154,12 +168,12 @@
 		78CBA863250BFC6100E72811 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				782090262512C1E3006C7697 /* UnitDetailView */,
 				78209021250EF3D6006C7697 /* ViewModel */,
 				78CBA83C250BFC2600E72811 /* MainView.swift */,
 				782090222510F783006C7697 /* BoardView.swift */,
 				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
 				78CBA864250BFC7300E72811 /* UnitCell.swift */,
-				78CBA866250BFC7800E72811 /* UnitDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 			files = (
 				78CBA85D250BFC3600E72811 /* DeathRattleMechanics.swift in Sources */,
 				78CBA865250BFC7300E72811 /* UnitCell.swift in Sources */,
+				782090282512C207006C7697 /* MechanicsDetailView.swift in Sources */,
 				78CBA867250BFC7800E72811 /* UnitDetail.swift in Sources */,
 				78CBA858250BFC3600E72811 /* Entity.swift in Sources */,
 				78CBA85E250BFC3600E72811 /* BattleGround.swift in Sources */,
@@ -249,6 +264,7 @@
 				78CBA85B250BFC3600E72811 /* EntityMeachanics.swift in Sources */,
 				78CBA83B250BFC2600E72811 /* AppDelegate.swift in Sources */,
 				78CBA857250BFC3600E72811 /* Board.swift in Sources */,
+				7820902A2512C256006C7697 /* PickUnitView.swift in Sources */,
 				782090232510F783006C7697 /* BoardView.swift in Sources */,
 				78CBA869250BFC8000E72811 /* UnitCellStatBar.swift in Sources */,
 			);
