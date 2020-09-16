@@ -19,21 +19,35 @@ struct MechanicsDetailView: View {
             }.frame(width: 220, height: 80).border(Color.gray, width: 1)
             Button("Add Mechanics", action: {
                 if self.unit.isUnitNotNil() {
-                    self.showingPopover.toggle()}}).popover(isPresented: self.$showingPopover) { VStack { Button(action: {
-                                       self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
-                                       self.showingPopover = false
-                                   }) {
-                                       Text("Replicator")
-                                   }
+                    self.showingPopover.toggle()}})
+                        .popover(isPresented: self.$showingPopover)
+                    { VStack(alignment: .leading, spacing: 1)
+                        { Button(action: {
+                            self.unit.addMechanic(mechanic:
+                                DeathRattleMechanics(withSummonedUnit:
+                                    Entity(race: .mech), count: 3))
+                            self.showingPopover = false
+                            }) {
+                                Text("Replicator")
+                                   }.buttonStyle(PickUnitButtonStyle())
                                    Button(action: {
                                         self.unit.addMechanic(mechanic: DeathRattleMechanics(withSummonedUnit: Entity(race: .mech), count: 3))
                                        self.showingPopover = false
                                    }) {
                                        Text("Golden Replicator")
                                    }
-                        }
+                        }.buttonStyle(PickUnitButtonStyle())
             }
         }
+    }
+}
+
+struct MechanicsDetailButtonStyle: ButtonStyle {
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color.blue : Color.clear)
+            .foregroundColor(.white)
     }
 }
 

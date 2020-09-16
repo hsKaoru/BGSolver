@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct PickUnitView: View {
-    private enum PickUnitViewOptions {
-        static let maxTier = 6
+    private enum Options {
+        static let maxTier = 6 + 1
         static let iconSymbol = "▼"
+        static let frameWidth: CGFloat = 256
+        static let frameHeight: CGFloat = 256
+        static let imageSize: CGFloat = 24
+
     }
 
     @State private var showingPopover:Bool = false
@@ -19,28 +23,40 @@ struct PickUnitView: View {
     var count = 5
 
     var body: some View {
-        Button(PickUnitViewOptions.iconSymbol, action: { self.showingPopover.toggle() })
+        Button(Options.iconSymbol, action: { self.showingPopover.toggle() })
             .popover(isPresented: self.$showingPopover) {
             List {
-                ForEach(1..<PickUnitViewOptions.maxTier+1) { tierIndex in
+                ForEach(1..<Options.maxTier) { tierIndex in
                     Section(header: Text("Tier \(tierIndex) units")) {
                     ForEach(0..<self.count) { index in
                             PickUnitTableRowView()
                         }
                     }
                 }
-                }}
+            }.frame(width: Options.frameWidth,
+                    height: Options.frameHeight)
+        }
     }
 }
 
 struct PickUnitTableRowView: View {
+    private enum Options {
+        static let imageSize: CGFloat = 24
+        static let rowFrameWidth: CGFloat = 256
+    }
 
     var body: some View {
         HStack() {
             Button(action: {
-                print("privet")
                      }) {
-                        Text("Show details")
+                        HStack {
+                            Image("legend")
+                                .resizable()
+                                .frame(width: Options.imageSize,
+                                       height: Options.imageSize)
+                            Text("Hydra")
+                        }.frame(width: Options.rowFrameWidth)
+
             }.buttonStyle(PickUnitButtonStyle())
         }
     }
@@ -50,10 +66,9 @@ struct PickUnitButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            //.frame(minWidth: 100, maxWidth: .infinity)
-            //.padding()
-            .background(configuration.isPressed ? Color.blue : Color.secondary)
+            .background(configuration.isPressed ? Color.blue : Color.clear)
             .foregroundColor(.white)
+
     }
 }
 
