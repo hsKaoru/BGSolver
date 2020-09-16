@@ -111,7 +111,6 @@ extension EntityViewModel {
 // MARK: - Mechanics
 
 extension EntityViewModel {
-    
 
     func fetchMechanicText(_ mechanic: EntityMeachanics) -> String {
         switch mechanic.type {

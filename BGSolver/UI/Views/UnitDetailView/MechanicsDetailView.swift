@@ -39,6 +39,6 @@ struct MechanicsDetailView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        MechanicsDetailView(unit: EntityViewModel(unit: Entity()))
+        MechanicsDetailView(unit: EntityViewModel(unit: Entity(mechanics: [DeathRattleMechanics(withDamageForOppositeBoard: 1)])))
     }
 }

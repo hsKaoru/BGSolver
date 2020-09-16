@@ -168,8 +168,8 @@
 		78CBA863250BFC6100E72811 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				782090262512C1E3006C7697 /* UnitDetailView */,
 				78209021250EF3D6006C7697 /* ViewModel */,
+				782090262512C1E3006C7697 /* UnitDetailView */,
 				78CBA83C250BFC2600E72811 /* MainView.swift */,
 				782090222510F783006C7697 /* BoardView.swift */,
 				78CBA868250BFC8000E72811 /* UnitCellStatBar.swift */,
