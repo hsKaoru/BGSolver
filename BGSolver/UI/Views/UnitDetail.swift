@@ -94,23 +94,40 @@ struct MechanicsDetailView: View {
 
 struct PickUnitView: View {
     @State private var showingPopover:Bool = false
-    var count = 70
+
+    enum TableOptions {
+        static let maxTier = 6
+    }
+
+    var count = 5
 
     var body: some View {
         Button("▼", action: { self.showingPopover.toggle() })
-            .popover(isPresented: self.$showingPopover) { List {
-                ForEach(0..<self.count) { index in
-                    Text("PickMe")
+            .popover(isPresented: self.$showingPopover) {
+            List {
+                ForEach(1..<TableOptions.maxTier+1) { tierIndex in
+                    Section(header: Text("Tier \(tierIndex) units")) {
+                    ForEach(0..<self.count) { index in
+                        HStack{
+                        Text("ME")
+                        Text("PickMe")}
+                        }
+                    }
                 }
                 }}
     }
 }
 
-struct  UnitDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit:   Entity(attack: 2, health: 2, mechanics: [AurasBuffMechanics(forRace: .murloc, attackBuffCount: 2, healthBuffCount: 0), DeathRattleMechanics(withDamageForOppositeBoard: 4), RebornMechanics(RebornedUnit: Entity(attack: 2, health: 1, mechanics: [DeathRattleMechanics(withDamageForOppositeBoard: 4)]))])))
-    }
-}
+//ForEach(httpSections) { section in
+//    Section(header: SectionHeaderView(section: section)) {
+//        ForEach(section.statuses) { status in
+//            NavigationLink(destination: DetailView(httpStatus: status)) {
+//                TableRowView(status: status)
+//            }
+//        }
+//    }
+//}
+
 
 extension UnitDetail {
     func getColorForPropertiesButtons(statValue: Bool?) -> Color {
@@ -120,5 +137,11 @@ extension UnitDetail {
             }
         }
         return Color.black
+    }
+}
+
+struct  UnitDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        UnitDetail(detailViewWindow: nil, unit: EntityViewModel(unit:   Entity(attack: 2, health: 2, mechanics: [AurasBuffMechanics(forRace: .murloc, attackBuffCount: 2, healthBuffCount: 0), DeathRattleMechanics(withDamageForOppositeBoard: 4), RebornMechanics(RebornedUnit: Entity(attack: 2, health: 1, mechanics: [DeathRattleMechanics(withDamageForOppositeBoard: 4)]))])))
     }
 }
