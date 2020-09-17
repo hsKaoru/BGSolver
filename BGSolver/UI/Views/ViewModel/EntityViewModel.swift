@@ -52,7 +52,7 @@ class EntityViewModel: ObservableObject {
     }
 
     func getUnit() -> Entity? {
-        return self.unit ?? nil
+        return self.unit
     }
 
 }
@@ -112,7 +112,7 @@ extension EntityViewModel {
 
 extension EntityViewModel {
 
-    func fetchMechanicText(_ mechanic: EntityMeachanics) -> String {
+    private func fetchMechanicText(_ mechanic: EntityMeachanics) -> String {
         switch mechanic.type {
         case .deathrattle:
             if let _ = mechanic as? RivendareMechanics {

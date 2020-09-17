@@ -58,7 +58,7 @@ class Entity {
         self.mechanics = mechanics
     }
 
-    // MARK: - Menegement properties
+    // MARK: - Manegement properties
 
     func die() {
         self.isDie = true
@@ -144,14 +144,3 @@ extension Entity: Equatable {
     }
 
 }
-
-//<Tag enumID="32" name="TRIGGER_VISUAL" type="Int" value="1"/>
-//<Tag enumID="45" name="HEALTH" type="Int" value="4"/>
-//<Tag enumID="47" name="ATK" type="Int" value="6"/>
-//<Tag enumID="48" name="COST" type="Int" value="4"/>
-//<Tag enumID="183" name="CARD_SET" type="Int" value="1453"/>
-//<Tag enumID="199" name="CLASS" type="Int" value="12"/>
-//<Tag enumID="200" name="CARDRACE" type="Int" value="17"/>
-//<Tag enumID="202" name="CARDTYPE" type="Int" value="4"/>
-//<Tag enumID="1440" name="TECH_LEVEL" type="Int" value="3"/>
-//<ReferencedTag enumID="194" name="DIVINE_SHIELD" type="Int" value="1"/>
