@@ -118,14 +118,22 @@ extension EntityViewModel {
             if let _ = mechanic as? RivendareMechanics {
                 return "Your minions trigger their Deathrattles twice"
             }
-            return "DeathRattle"
+            guard let mechanic = mechanic as? DeathRattleMechanics else { return "Deathrattle: unkwoned type" }
+            if let unit = mechanic.summonedUnitType, let count = mechanic.summonedUnitCount {
+                return "Deathrattle: Summon \(count) \(unit.attack)/\(unit.health) \(unit.race)"
+            } else if let buff = mechanic.buffType {
+                return "Deathrattle: Give your \(buff.buffedRace) +\(buff.attackBuffCount)/\(buff.healthBuffCount)"
+            } else if let damage = mechanic.damageForUnit, let count = mechanic.damagedUnitCount {
+                return "Deathrattle: Deal \(damage) damage to \(count) enemy"
+            }
+            return "Deathrattle: unkwoned type"
         case .buff:
             if let buff = mechanic as? BuffMechanics {
                 return "Give a friendly \(buff.buffedRace) +\(buff.attackBuffCount)/+\(buff.healthBuffCount)"
             }
             return ""
         case .cleave:
-            return "Also Damages the minions next to whomever this attacks"
+            return "Cleave: Also Damages the minions next to whomever this attacks"
         case .reborn:
             return "Reborn"
         }
