@@ -88,50 +88,6 @@ class Board {
         guard units.count < BoardProperties.boardSize && index <= units.endIndex else { return }
         units.insert(unit, at: index)
     }
-
-    //MARK: - board management
-
-    //Deprecated
-
-//    func updateBoardStatus(forStage stage: BattleStage) {
-//        switch stage {
-//        case .beforeBattleRoundStart:
-//            updateBoardStatusBeforeStartRound()
-//        case .BattleRoundEnd:
-//            updateBattleStatusForEndRound()
-//        }
-//    }
-//
-//    func updateBoardStatusBeforeStartRound() {
-//        for unit in units {
-//            if unit.isRivendare() {
-//                self.isRivendare = true
-//            }
-//            for buff in unit.getUnitBuffMechanics() {
-//                buff.triggerMechanics(forBoard: self, without: unit)
-//            }
-//        }
-//    }
-//
-//    func updateBattleStatusForEndRound() {
-//        for unit in units {
-//            for buff in unit.getUnitBuffMechanics() {
-//                buff.debuff(forBoard: self, without: unit)
-//            }
-//            if unit.isDie == true {
-//                removeUnit(with: unit.uid)
-//                for deathrattles in unit.getDeathrattles() {
-//                    if self.isRivendare {
-//                        deathrattles.triggerMechanics(forBoard: self)
-//                    }
-//                    deathrattles.triggerMechanics(forBoard: self)
-//                }
-//                if let reborn = unit.getRebornMecahnics() {
-//                    reborn.triggerMechanics(forBoard: self)
-//                }
-//            }
-//        }
-//    }
 }
 
 
